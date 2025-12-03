@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Netflix Clone - Stream unlimited movies and TV shows">
+    <meta name="keywords" content="netflix, movies, tv shows, streaming">
+    <title>Netflix Clone - Watch Movies & TV Shows Online</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <div class="navbar-left">
+                <div class="navbar-logo">
+                    <svg viewBox="0 0 111 30" class="netflix-logo" aria-hidden="true">
+                        <g>
+                            <path d="M105.06233,14.2806261 L110.999156,30 C109.249227,29.7497422 107.500234,29.4366857 105.718437,29.1554972 L102.374168,20.4686475 L98.9371075,28.4375293 C97.2499766,28.1563408 95.5928391,27.8432843 93.9057081,27.5618132 L99.9372012,14.0931671 L94.4680851,-5.68434189e-14 L99.5313525,-5.68434189e-14 L102.593495,7.87421502 L105.874965,-5.68434189e-14 L110.999156,-5.68434189e-14 L105.06233,14.2806261 Z M90.4686475,-5.68434189e-14 L85.8749649,-5.68434189e-14 L85.8749649,27.2499766 C87.3746368,27.3437061 88.9371075,27.4055675 90.4686475,27.5618132 L90.4686475,-5.68434189e-14 Z M81.9055207,26.93692 C78.5186216,26.4018207 75.0685214,25.7737304 71.6812556,24.9849711 L71.6812556,-5.68434189e-14 L76.2749382,-5.68434189e-14 L76.2749382,21.8745899 C78.0437941,22.2196093 79.8126501,22.5338881 81.9055207,22.8783092 L81.9055207,26.93692 Z M64.2496954,10.6561065 L64.2496954,15.3435186 L57.8442216,15.3435186 L57.8442216,25.9996251 L53.2186709,25.9996251 L53.2186709,-5.68434189e-14 L66.3436123,-5.68434189e-14 L66.3436123,4.68741213 L57.8442216,4.68741213 L57.8442216,10.6561065 L64.2496954,10.6561065 Z M45.3435186,4.68741213 L45.3435186,26.2498828 C43.7810479,26.2498828 42.1876465,26.2498828 40.6561065,26.3117443 L40.6561065,4.68741213 L35.8121661,4.68741213 L35.8121661,-5.68434189e-14 L50.2183897,-5.68434189e-14 L50.2183897,4.68741213 L45.3435186,4.68741213 Z M30.749836,15.5928391 C28.687787,15.5928391 26.2498828,15.5928391 24.4999531,15.6875059 L24.4999531,22.6562939 C27.2499766,22.4678976 30,22.2495079 32.7809542,22.1557784 L32.7809542,26.5928391 C28.687787,26.93692 24.5936291,27.3437061 20.562291,27.6876479 L20.562291,-5.68434189e-14 L32.7809542,-5.68434189e-14 L32.7809542,4.68741213 L24.4999531,4.68741213 L24.4999531,10.9991564 C26.3126816,10.9991564 29.0936358,10.9054269 30.749836,10.9054269 L30.749836,15.5928391 Z M4.78114163,12.9684132 L4.78114163,29.3429562 C3.09401069,29.5313525 1.59340144,29.7497422 0,30 L0,-5.68434189e-14 L4.4690224,-5.68434189e-14 L10.562377,17.0315868 L10.562377,-5.68434189e-14 L15.2497891,-5.68434189e-14 L15.2497891,28.061674 C13.5935889,28.3437998 11.906458,28.4375293 10.1246602,28.6868498 L4.78114163,12.9684132 Z" fill="#E50914"></path>
+                        </g>
+                    </svg>
+                </div>
+                <ul class="navbar-menu">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#tv-shows">TV Shows</a></li>
+                    <li><a href="#movies">Movies</a></li>
+                    <li><a href="#new">New & Popular</a></li>
+                    <li><a href="#mylist">My List</a></li>
+                </ul>
+            </div>
+            <div class="navbar-right">
+                <div class="search-container">
+                    <button class="search-icon" id="searchToggle" aria-label="Search">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Titles, people, genres">
+                </div>
+                <div class="profile-container">
+                    <button class="profile-button" id="profileButton" aria-label="Profile">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23E50914'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/%3E%3C/svg%3E" alt="Profile">
+                        <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 12 12">
+                            <path d="M6 9L1 4h10z" fill="currentColor"/>
+                        </svg>
+                    </button>
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <a href="#" class="dropdown-item">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23E50914'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/%3E%3C/svg%3E" alt="User 1">
+                            <span>User 1</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2346d369'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/%3E%3C/svg%3E" alt="User 2">
+                            <span>User 2</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">Account</a>
+                        <a href="#" class="dropdown-item">Help Center</a>
+                        <a href="#" class="dropdown-item">Sign out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner" id="heroBanner">
+        <div class="hero-content">
+            <h1 class="hero-title" id="heroTitle">Loading...</h1>
+            <div class="hero-meta" id="heroMeta"></div>
+            <p class="hero-description" id="heroDescription">Loading amazing content...</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" id="heroPlayBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                    Play
+                </button>
+                <button class="btn btn-secondary" id="heroInfoBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                    </svg>
+                    More Info
+                </button>
+            </div>
+        </div>
+        <div class="hero-fade"></div>
+    </section>
+
+    <!-- Search Results (Hidden by default) -->
+    <div class="search-results-container" id="searchResults" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">Search Results</h2>
+            <div class="movie-row-container" id="searchResultsRow"></div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Trending Now -->
+            <section class="content-section" id="trendingSection">
+                <h2 class="section-title">Trending Now</h2>
+                <div class="movie-row-container" id="trendingRow">
+                    <!-- Skeleton loaders will be inserted here -->
+                </div>
+            </section>
+
+            <!-- Netflix Originals -->
+            <section class="content-section" id="originalsSection">
+                <h2 class="section-title">Netflix Originals</h2>
+                <div class="movie-row-container" id="originalsRow"></div>
+            </section>
+
+            <!-- Popular Movies -->
+            <section class="content-section" id="popularSection">
+                <h2 class="section-title">Popular Movies</h2>
+                <div class="movie-row-container" id="popularRow"></div>
+            </section>
+
+            <!-- Top Rated -->
+            <section class="content-section" id="topRatedSection">
+                <h2 class="section-title">Top Rated</h2>
+                <div class="movie-row-container" id="topRatedRow"></div>
+            </section>
+
+            <!-- TV Shows -->
+            <section class="content-section" id="tvShowsSection">
+                <h2 class="section-title">TV Shows</h2>
+                <div class="movie-row-container" id="tvShowsRow"></div>
+            </section>
+
+            <!-- Continue Watching -->
+            <section class="content-section" id="continueSection">
+                <h2 class="section-title">Continue Watching</h2>
+                <div class="movie-row-container" id="continueRow"></div>
+            </section>
+
+            <!-- New Releases -->
+            <section class="content-section" id="newReleasesSection">
+                <h2 class="section-title">New Releases</h2>
+                <div class="movie-row-container" id="newReleasesRow"></div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">Netflix Clone - Built with TMDB API</p>
+            <p class="footer-disclaimer">This is a demo project for educational purposes only. All content is provided by The Movie Database (TMDB).</p>
+        </div>
+    </footer>
+
+    <!-- Movie Details Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content" id="modalContent">
+            <button class="modal-close" id="modalClose" aria-label="Close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                </svg>
+            </button>
+            <div class="modal-backdrop" id="modalBackdrop"></div>
+            <div class="modal-info">
+                <h2 class="modal-title" id="modalTitle">Movie Title</h2>
+                <div class="modal-meta" id="modalMeta"></div>
+                <p class="modal-description" id="modalDescription">Movie description goes here...</p>
+                <div class="modal-buttons">
+                    <button class="btn btn-primary" id="modalPlayBtn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                        Play
+                    </button>
+                    <button class="btn btn-secondary" id="modalTrailerBtn" style="display: none;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                        </svg>
+                        Watch Trailer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
